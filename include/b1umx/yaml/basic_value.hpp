@@ -6,6 +6,7 @@
 
 #include "omap.hpp"
 #include "type.hpp"
+#include "type_traits.hpp"
 
 
 
@@ -70,6 +71,14 @@ public:
         }
         return result;
     }
+
+    template<typename T>
+    std::enable_if_t<internal::has_as<Traits<T>, basic_value>, T> as() const {
+        return Traits<T>::as(*this);
+    }
+
+    template<typename T>
+    std::enable_if_t<!internal::has_as<Traits<T>, basic_value>, T> as() = delete;
 };
 
 
