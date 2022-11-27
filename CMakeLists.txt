@@ -55,6 +55,7 @@ if(B1UMX_YAML_BUILD_TESTS)
 endif()
 
 if(B1UMX_YAML_BUILD_EXAMPLES)
+    message(STATUS "Enable building examples")
     add_subdirectory(examples)
 endif()
 

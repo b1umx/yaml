@@ -3,9 +3,11 @@
 
 
 int main() {
+    using namespace std;
     using namespace b1umx::yaml;
     value bv(true);
-    value bn(null);
-    std::cout << "bool: " << bv.as<bool>() << '\n';
+    value bs(std::string("hello"));
+    std::cout << "bool: " << bv.as<string>() << '\n';
+    std::cout << "string: " << bs.as<string>() << '\n';
     // std::cout << "null: " << bn.as<null_t>() << '\n';  -- use of deleted function compilation error
 }
